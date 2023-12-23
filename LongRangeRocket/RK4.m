@@ -1,12 +1,13 @@
-%ËÄ½×Áú¸ñ¿âËş·¨
+%å››é˜¶é¾™æ ¼åº“å¡”æ³•
 function [v,v_d,theta,theta_d,x,y,alpha,m,phi_pr,t] = RK4(step,a,b,A_phi,P_e,g,R_0,varvec)
-%²½³¤step
-%ÏÂÏŞa
-%ÉÏÏŞb
+%æ­¥é•¿step
+%ä¸‹é™a
+%ä¸Šé™b
+
 t = a:step:b;
 N = (b - a)/step;
 
-%¸³³õÖµ
+%èµ‹åˆå€¼
 v(1) = R_0(1,1);
 theta(1) = R_0(1,2);
 x(1) = R_0(1,3);
@@ -17,7 +18,7 @@ phi_pr(1) = R_0(1,7);
 v_d(1) = 0;
 theta_d(1) = 0;
 
-%·½³Ì×éº¯Êı
+%æ–¹ç¨‹ç»„å‡½æ•°
     function F1 = F_v(t,theta)
         F1 = P_e/mass(t) + g * sin(theta);
     end
@@ -37,7 +38,7 @@ theta_d(1) = 0;
         F4 = v * sin(theta);
     end
 
-%ËÄ½×Áú¸ñ¿âËşµü´ú
+%å››é˜¶é¾™æ ¼åº“å¡”è¿­ä»£
 for i = 1:N
     
     Kv1 = F_v(t(i),theta(i));
