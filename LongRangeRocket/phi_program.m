@@ -1,6 +1,6 @@
-%³ÌÐò½Çº¯Êý
+%ç¨‹åºè§’å‡½æ•°
 function phi_pr = phi_program(t)
-%º¯Êý²ÎÊý
+%å‡½æ•°å‚æ•°
 t1 = 10;
 t2 = 130;
 t3 = 150;
