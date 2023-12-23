@@ -2,21 +2,21 @@
 close all;
 clear all;clc;
 
-%Ê±¼äÓë²½³¤
+%æ—¶é—´ä¸æ­¥é•¿
 t_start = 0;
 t_end = 150;
 step = 0.1;
 
-%¼È¶¨·½³Ì²ÎÊı
-A_phi = 35;%½Ç¶ÈÔöÒæÏµÊı
-P_e = 200000;%·¢¶¯»úÍÆÁ¦
+%æ—¢å®šæ–¹ç¨‹å‚æ•°
+A_phi = 35;%è§’åº¦å¢ç›Šç³»æ•°
+P_e = 200000;%å‘åŠ¨æœºæ¨åŠ›
 g = -9.8;
 
-%»ğ¼ı×İÏòÔË¶¯·½³Ì×éÇó½â
-%ÊäÈë±äÁ¿
+%ç«ç®­çºµå‘è¿åŠ¨æ–¹ç¨‹ç»„æ±‚è§£
+%è¾“å…¥å˜é‡
 syms v theta x y alpha m phi_pr
 varvec = [v theta x y alpha m phi_pr];
-%³õÖµ
+%åˆå€¼
 v_0 = 0;
 theta_0 = pi/2;
 x_0 = 0;
@@ -26,22 +26,23 @@ m_0 = 8000;
 phi_pr0 = pi/2;
 R_0 = [v_0 theta_0 x_0 y_0 alpha_0 m_0 phi_pr0];
 
-%Áú¸ñ¿âËş·¨Çó½â
+%é¾™æ ¼åº“å¡”æ³•æ±‚è§£
 [v,v_d,theta,theta_d,x,y,alpha,m,phi_pr,t] = RK4(step,t_start,t_end,A_phi,P_e,g,R_0,varvec)
-%ÒıÁ¦Ïîµ¼ÖÂµÄËÙ¶ÈËğÊ§Á¿
+%å¼•åŠ›é¡¹å¯¼è‡´çš„é€Ÿåº¦æŸå¤±é‡
 v_1k = sum(-g * step * sin(theta));
 
+%ç»˜åˆ¶å›¾åƒ
 figure
 plot(t,v,'black','LineWidth',1.0);
 xlabel('{\itt} /s','FontName','Times New Roman','FontSize',10);
 ylabel('{\itv} m/s','FontName','Times New Roman','FontSize',10,'Rotation',0);
-title('ËÙ¶È-Ê±¼äÇúÏß','FontSize',10);
+title('é€Ÿåº¦-æ—¶é—´æ›²çº¿','FontSize',10);
 
 figure
 plot(x,y,'black','LineWidth',1.0);
 xlabel('{\itx} /m','FontName','Times New Roman','FontSize',10);
 ylabel('{\ity} /m','FontName','Times New Roman','FontSize',10,'Rotation',0);
-title('»ğ¼ı¹ì¼£','FontSize',10);
+title('ç«ç®­è½¨è¿¹','FontSize',10);
 
 figure
 hold on;
@@ -49,9 +50,9 @@ plot(t,theta .* 180/pi,'black','LineWidth',1.0);
 plot(t,alpha .* 180/pi,'black--','LineWidth',1.0);
 plot(t,phi_pr .* 180/pi,'black:','LineWidth',1.0);
 xlabel('{\itt} /s','FontName','Times New Roman','FontSize',10);
-ylabel('¡ã','FontName','Times New Roman','FontSize',10,'Rotation',0);
-legend('µ¯µÀÇã½Ç','¹¥½Ç','³ÌĞò½Ç','FontSize',10);
-title('µ¯µÀÇã½Ç/¹¥½Ç/³ÌĞò½Ç-Ê±¼äÇúÏß','FontSize',10);
+ylabel('Â°','FontName','Times New Roman','FontSize',10,'Rotation',0);
+legend('å¼¹é“å€¾è§’','æ”»è§’','ç¨‹åºè§’','FontSize',10);
+title('å¼¹é“å€¾è§’/æ”»è§’/ç¨‹åºè§’-æ—¶é—´æ›²çº¿','FontSize',10);
 hold off;
 
 figure
@@ -61,7 +62,7 @@ plot(t,P_ey,'black','LineWidth',1.0);
 plot(t,v_d .* m,'black--','LineWidth',1.0);
 xlabel('{\itt} /s','FontName','Times New Roman','FontSize',10);
 legend('{\itP}_e','{\itP}_e+{\itmg}sin{\it\theta}','FontName','Times New Roman','FontSize',10);
-title('ÇĞÏòÁ¦ËæÊ±¼ä±ä»¯ÇúÏß','FontSize',10);
+title('åˆ‡å‘åŠ›éšæ—¶é—´å˜åŒ–æ›²çº¿','FontSize',10);
 hold off;
 
 figure
@@ -69,6 +70,6 @@ hold on;
 plot(t,v_d/(-g) + sin(theta),'black','LineWidth',1.0);
 plot(t,v/(-g) .* theta_d + cos(theta),'black:','LineWidth',1.0);
 xlabel('{\itt} /s','FontName','Times New Roman','FontSize',10);
-legend('ÖáÏò¹ıÔØ','·¨Ïò¹ıÔØ','FontSize',10);
-title('¹ıÔØ-Ê±¼äÇúÏß','FontSize',10);
+legend('è½´å‘è¿‡è½½','æ³•å‘è¿‡è½½','FontSize',10);
+title('è¿‡è½½-æ—¶é—´æ›²çº¿','FontSize',10);
 hold off;
