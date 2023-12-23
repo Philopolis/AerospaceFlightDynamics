@@ -1,5 +1,6 @@
 %程序角函数
 function phi_pr = phi_program(t)
+
 %函数参数
 t1 = 10;
 t2 = 130;
@@ -15,3 +16,4 @@ else if t < t2
     end
 end
 end
+
