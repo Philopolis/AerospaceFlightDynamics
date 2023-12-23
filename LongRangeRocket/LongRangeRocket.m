@@ -1,6 +1,7 @@
 %main func
 close all;
-clear all;clc;
+clear all;
+clc;
 
 %时间与步长
 t_start = 0;
