@@ -15,7 +15,7 @@ g = -9.8;
 
 %火箭纵向运动方程组求解
 %输入变量
-syms v theta x y alpha m phi_pr
+syms v theta x y alpha m phi_pr;
 varvec = [v theta x y alpha m phi_pr];
 %初值
 v_0 = 0;
