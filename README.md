@@ -15,3 +15,5 @@ Because the equations are not composed entirely of differential equation, they a
 Therefore, the numerical solution may deviate from the correct result.
 
 Please provide feedback if you find errors or bugs in the code.
+
+Email/邮箱：pauline.live@qq.com or pauline.live.cn@gmail.com(not ofen)
