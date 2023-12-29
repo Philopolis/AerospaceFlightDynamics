@@ -1,8 +1,8 @@
-%ËÄ½×Áú¸ñ¿âËş·¨
+%å››é˜¶é¾™æ ¼åº“å¡”æ³•
 function [v,theta,x,y,alpha_b,delta_zb,Theta,t,a22,a24,a25,a34,a35] = RK4(step,varvec)
-%²½³¤step
+%æ­¥é•¿step
 
-%³õÖµ
+%åˆå€¼
 run('Constants.m');
 v(1) = 250;
 theta(1) = 0;
@@ -13,13 +13,13 @@ delta_zb(1) = 0;
 Theta(1) = 0;
 t(1) = 0;
 
-%¶¯Á¦ÏµÊı¼ÆËã
+%åŠ¨åŠ›ç³»æ•°è®¡ç®—
 J = 215;
 m_zomega_z = -0.2;
 L = 2.5;
 
-%ËÄ½×Áú¸ñ¿âËşµü´ú
-%% ·½°¸·ÉĞĞ½×¶Î
+%å››é˜¶é¾™æ ¼åº“å¡”è¿­ä»£
+%% æ–¹æ¡ˆé£è¡Œé˜¶æ®µ
 
 i = 1;
 while x < 24000
@@ -50,23 +50,23 @@ while x < 24000
     y(i+1) = y(i) + step/6 .* (Ky1 + 2 .* Ky2 + 2 .* Ky3 + Ky4);
     
     delta_zb(i+1) = TransientEquilbrium(alpha_b(i));
-    alpha_b(i+1) = NormalOverload_y2(v(i),theta(i+1),x(i),y(i))/NormalOverload_y2alpha(v(i),x(i),y(i),alpha_b(i),t(i));%·½°¸·ÉĞĞ¿ØÖÆ·½³Ì
+    alpha_b(i+1) = NormalOverload_y2(v(i),theta(i+1),x(i),y(i))/NormalOverload_y2alpha(v(i),x(i),y(i),alpha_b(i),t(i));%æ–¹æ¡ˆé£è¡Œæ§åˆ¶æ–¹ç¨‹
     Theta(i+1) = theta(i) + alpha_b(i);
-    t(i+1) = i .* step;
     
-    %¶¯Á¦ÏµÊı
+    %åŠ¨åŠ›ç³»æ•°
     a22(i+1) = -m_zomega_z .* DynamicPressure(y(i),v(i)) .* S .* L/J;
     a24(i+1) = -m_zalpha .* DynamicPressure(y(i),v(i)) .* S .* L/J;
     a25(i+1) = -m_zdelta_z .* DynamicPressure(y(i),v(i)) .* S .* L/J;
     a34(i+1) = (Propulsion(x(i)) + C_yalpha .* DynamicPressure(y(i),v(i)) .* S)/(mass(t(i),x(i)) .* v(i));
     a35(i+1) = C_ydelta_z .* DynamicPressure(y(i),v(i)) .* S/(mass(t(i),x(i)) .* v(i));
     
+    t(i+1) = i .* step;
     i = i+1;
 end
 
-%% µ¼Òı·ÉĞĞ½×¶Î
+%% å¯¼å¼•é£è¡Œé˜¶æ®µ
 
-%³õÖµ
+%åˆå€¼
 x_0 = x(i);
 y_0 = y(i);
 theta_0 = theta(i);
@@ -102,19 +102,19 @@ while x < x_T
     q(i+1) = q(i) + step/6 .* (Kq1 + 2 .* Kq2 + 2 .* Kq3 + Kq4);
     
     delta_zb(i+1) = TransientEquilbrium(alpha_b(i));
-    alpha_b(i+1) = (v(i)/GravityConstant(y(i)) .* K .* Kq1 + cos(K .* (q(i) + atan(y_0/(x_T - x_0))) + theta_0))/NormalOverload_y2alpha(v(i),x(i),y(i),alpha_b(i),t(i));%µ¼Òı·ÉĞĞ¿ØÖÆ·½³Ì
+    alpha_b(i+1) = (v(i)/GravityConstant(y(i)) .* K .* Kq1 + cos(K .* (q(i) + atan(y_0/(x_T - x_0))) + theta_0))/NormalOverload_y2alpha(v(i),x(i),y(i),alpha_b(i),t(i));%å¯¼å¼•é£è¡Œæ§åˆ¶æ–¹ç¨‹
     Theta(i+1) = theta(i) + alpha_b(i);
     x(i+1) = x_T - r(i) .* cos(q(i));
     y(i+1) = y_T - r(i) .* sin(q(i));
-    t(i+1) = i .* step;
     
-    %¶¯Á¦ÏµÊı
+    %åŠ¨åŠ›ç³»æ•°
     a22(i+1) = -m_zomega_z .* DynamicPressure(y(i),v(i)) .* S .* L/J;
     a24(i+1) = -m_zalpha .* DynamicPressure(y(i),v(i)) .* S .* L/J;
     a25(i+1) = -m_zdelta_z .* DynamicPressure(y(i),v(i)) .* S .* L/J;
     a34(i+1) = (Propulsion(x(i)) + C_yalpha .* DynamicPressure(y(i),v(i)) .* S)/(mass(t(i),x(i)) .* v(i));
     a35(i+1) = C_ydelta_z .* DynamicPressure(y(i),v(i)) .* S/(mass(t(i),x(i)) .* v(i));
     
+    t(i+1) = i .* step;
     i = i+1;
 end
 end
