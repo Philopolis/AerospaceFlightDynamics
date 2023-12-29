@@ -1,6 +1,7 @@
-%ÍÆÁ¦º¯Êı
+%% æ¨åŠ›å‡½æ•°
 function P_e = Propulsion(x)
-run('Constants.m');
+
+P_0 = 2000;%å‘åŠ¨æœºæ¨åŠ›
 
 if x < 9100 && x >=0
     P_e = 0;
