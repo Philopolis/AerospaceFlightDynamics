@@ -1,4 +1,4 @@
-%四阶龙格库塔法
+%% 四阶龙格库塔法
 function [v,v_d,theta,theta_d,x,y,alpha,m,phi_pr,t] = RK4(step,a,b,A_phi,P_e,g,R_0,varvec)
 %步长step
 %下限a
@@ -7,7 +7,7 @@ function [v,v_d,theta,theta_d,x,y,alpha,m,phi_pr,t] = RK4(step,a,b,A_phi,P_e,g,R
 t = a:step:b;
 N = (b - a)/step;
 
-%赋初值
+%% 赋初值
 v(1) = R_0(1,1);
 theta(1) = R_0(1,2);
 x(1) = R_0(1,3);
@@ -18,7 +18,7 @@ phi_pr(1) = R_0(1,7);
 v_d(1) = 0;
 theta_d(1) = 0;
 
-%方程组函数
+%% 方程组函数
     function F1 = F_v(t,theta)
         F1 = P_e/mass(t) + g * sin(theta);
     end
@@ -38,7 +38,7 @@ theta_d(1) = 0;
         F4 = v * sin(theta);
     end
 
-%四阶龙格库塔迭代
+%% 四阶龙格库塔迭代
 for i = 1:N
     
     Kv1 = F_v(t(i),theta(i));
