@@ -1,34 +1,34 @@
 %% main func
-%¸Ã³ÌĞòÔËĞĞÒ»´ÎËùĞèÊ±¼äÔ¼Îª455s
+%è¯¥ç¨‹åºè¿è¡Œä¸€æ¬¡æ‰€éœ€æ—¶é—´çº¦ä¸º93s
 
 close all;
 clear all;
 clc;
 
-%²½³¤
+%æ­¥é•¿
 step = 0.01;
 
-%Ç¦´¸Æ½Ãæµ¼µ¯ÖÊĞÄÔË¶¯·½³Ì×éÇó½â
-%ÊäÈë±äÁ¿
+%é“…é”¤å¹³é¢å¯¼å¼¹è´¨å¿ƒè¿åŠ¨æ–¹ç¨‹ç»„æ±‚è§£
+%è¾“å…¥å˜é‡
 syms v theta x y alpha_b delta_zb
 varvec = [v theta x y alpha_b delta_zb];
 
-%Áú¸ñ¿âËş·¨Çó½â
+%é¾™æ ¼åº“å¡”æ³•æ±‚è§£
 [v,theta,x,y,alpha_b,delta_zb,Theta,t,a22,a24,a25,a34,a35] = RK4(step,varvec)
 
-%% »æÖÆÇúÏß
+%% ç»˜åˆ¶æ›²çº¿
 
 figure
 plot(t,v,'black','LineWidth',1.0);
 xlabel('{\itt} /s','FontName','Times New Roman','FontSize',10);
 ylabel('{\itV} m/s','FontName','Times New Roman','FontSize',10,'Rotation',0);
-title('ËÙ¶È-Ê±¼äÇúÏß','FontSize',10);
+title('é€Ÿåº¦-æ—¶é—´æ›²çº¿','FontSize',10);
 
 figure
 plot(x,y,'black','LineWidth',1.0);
 xlabel('{\itx} /m','FontName','Times New Roman','FontSize',10);
 ylabel('{\ity} /m','FontName','Times New Roman','FontSize',10,'Rotation',0);
-title('µ¼µ¯µ¯µÀ','FontSize',10);
+title('å¯¼å¼¹å¼¹é“','FontSize',10);
 
 figure
 hold on;
@@ -39,12 +39,12 @@ plot(t,Theta .* 180/pi,'black--','LineWidth',1.0);
 indices = round(linspace(1,length(t),20));
 plot(t(indices),delta_zb(indices) .* 180/pi,'black+','LineWidth',1.0); 
 xlabel('{\itt} /s','FontName','Times New Roman','FontSize',10);
-ylabel('¡ã','FontName','Times New Roman','FontSize',10,'Rotation',0);
-legend('¹¥½Ç','+¶æÆ«½Ç','µ¯µÀÇã½Ç','×ËÌ¬½Ç','FontSize',10);
-title('¹¥½Ç£¬¶æÆ«½Ç£¬µ¯µÀÇã½Ç£¬×ËÌ¬½Ç-Ê±¼äÇúÏß','FontSize',10);
+ylabel('Â°','FontName','Times New Roman','FontSize',10,'Rotation',0);
+legend('æ”»è§’','+èˆµåè§’','å¼¹é“å€¾è§’','å§¿æ€è§’','FontSize',10);
+title('æ”»è§’ï¼Œèˆµåè§’ï¼Œå¼¹é“å€¾è§’ï¼Œå§¿æ€è§’-æ—¶é—´æ›²çº¿','FontSize',10);
 hold off;
 
-% %¶¯Á¦ÏµÊıÇúÏß
+% %åŠ¨åŠ›ç³»æ•°æ›²çº¿
 % figure
 % plot(t,a22,'black','LineWidth',1.0);
 % xlabel('{\itt} /s','FontName','Times New Roman','FontSize',10);
