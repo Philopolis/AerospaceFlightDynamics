@@ -1,8 +1,8 @@
-%Æø¶¯×èÁ¦º¯Êı
+%% é˜»åŠ›å‡½æ•°
 function X = Resistance(alpha,y,v)
-run('Constants.m');
 
-C_x = 0.2 + 0.03 .* alpha^2;%×èÁ¦ÏµÊı
+S = 0.45;%å‚è€ƒé¢ç§¯
+C_x = 0.2 + 0.03 .* alpha^2;%Ã—Ã¨ÃÂ¦ÃÂµÃŠÃ½
 
 q = DynamicPressure(y,v);
 
