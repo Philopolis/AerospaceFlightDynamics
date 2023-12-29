@@ -1,6 +1,8 @@
-%重力加速度函数
+%% 閲嶅姏鍔犻�熷害
 function g = GravityConstant(y)
-run('Constants.m');
+
+g_0 = 9.81;%鏍囧噯娴峰钩闈㈤噸鍔涘姞閫熷害
+R_e = 6371000;%鍦扮悆骞冲潎鍗婂緞
 
 if y > 0
     g = g_0 .* (R_e/(R_e + y)).^2;
