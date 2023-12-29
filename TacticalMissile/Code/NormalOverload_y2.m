@@ -1,4 +1,4 @@
-%法向过载控制关系函数
+%% 娉曞悜杩囪浇鍑芥暟
 function n_y2 = NormalOverload_y2(v,theta,x,y)
 
 if x >= 0 && x < 9100
