@@ -1,4 +1,4 @@
-%¶¯Ñ¹º¯Êý
+%% åŠ¨åŽ‹å‡½æ•°
 function q = DynamicPressure(y,v)
 
 rho = AtmosDensity(y);
