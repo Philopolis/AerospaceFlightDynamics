@@ -1,4 +1,4 @@
-%main func
+%% main func
 close all;
 clear all;
 clc;
@@ -8,15 +8,16 @@ t_start = 0;
 t_end = 150;
 step = 0.1;
 
-%既定方程参数
+%% 既定方程参数
 A_phi = 35;%角度增益系数
 P_e = 200000;%发动机推力
 g = -9.8;
 
-%火箭纵向运动方程组求解
+%% 火箭纵向运动方程组求解
 %输入变量
 syms v theta x y alpha m phi_pr;
 varvec = [v theta x y alpha m phi_pr];
+
 %初值
 v_0 = 0;
 theta_0 = pi/2;
@@ -29,10 +30,11 @@ R_0 = [v_0 theta_0 x_0 y_0 alpha_0 m_0 phi_pr0];
 
 %龙格库塔法求解
 [v,v_d,theta,theta_d,x,y,alpha,m,phi_pr,t] = RK4(step,t_start,t_end,A_phi,P_e,g,R_0,varvec)
+
 %引力项导致的速度损失量
 v_1k = sum(-g * step * sin(theta));
 
-%绘制图像
+%% 绘制图像
 figure
 plot(t,v,'black','LineWidth',1.0);
 xlabel('{\itt} /s','FontName','Times New Roman','FontSize',10);
