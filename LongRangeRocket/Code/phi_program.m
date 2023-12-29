@@ -1,4 +1,4 @@
-%程序角函数
+%% 程序角函数
 function phi_pr = phi_program(t)
 
 %函数参数
