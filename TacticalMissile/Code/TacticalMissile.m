@@ -8,7 +8,7 @@ clc;
 %步长
 step = 0.01;
 
-%铅锤平面导弹质心运动方程组求解
+%% 铅锤平面导弹质心运动方程组求解
 %输入变量
 syms v theta x y alpha_b delta_zb
 varvec = [v theta x y alpha_b delta_zb];
