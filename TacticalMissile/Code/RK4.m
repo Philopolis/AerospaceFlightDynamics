@@ -1,8 +1,8 @@
-%四阶龙格库塔法
+%% 四阶龙格库塔法
 function [v,theta,x,y,alpha_b,delta_zb,Theta,t,a22,a24,a25,a34,a35] = RK4(step,varvec)
 %步长step
 
-%初值
+%% 初值
 run('Constants.m');
 v(1) = 250;
 theta(1) = 0;
@@ -23,8 +23,8 @@ m_zomega_z = -0.2;
 S = 0.45;%参考面积
 L = 2.5;%参考长度
 
-%四阶龙格库塔迭代
-%% 方案飞行阶段
+%% 四阶龙格库塔迭代
+%方案飞行阶段
 
 i = 1;
 while x < 24000
@@ -69,7 +69,7 @@ while x < 24000
     i = i+1;
 end
 
-%% 导引飞行阶段
+%导引飞行阶段
 
 %初值
 x_0 = x(i);
