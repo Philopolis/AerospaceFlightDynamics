@@ -1,4 +1,4 @@
-***⚠严禁直接将其当作你自己的报告上交⚠***
+# ⚠严禁直接将其当作你自己的报告上交⚠
 
 战术导弹部分采用了给定高度（函数）的飞行方案和比例导引法的导引方法。
 
@@ -13,4 +13,4 @@ Because the equations are not composed entirely of differential equation, they a
 Therefore, the numerical solution may deviate from the correct result.  
 Please provide feedback if you find errors or bugs in the code.
 
-📫Email/邮箱：pauline.live@qq.com or pauline.live.cn@gmail.com(not ofen)
+📫邮箱/Email：pauline.live@qq.com or pauline.live.cn@gmail.com(not ofen)
