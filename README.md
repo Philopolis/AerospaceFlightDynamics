@@ -23,3 +23,11 @@ Please provide feedback if you find errors or bugs in the code.
 pdf、数据和数据图并未更新，报告中使用的图像依旧是第一版代码所绘  
 更新的代码位于code2文件夹下  
 在matlab R2023b环境下运行良好  
+
+在此感谢学长简谐摄动  
+https://space.bilibili.com/37747164  
+的分享，他的工作使本库的代码上升到了全新的高度  
+相关视频在  
+https://www.bilibili.com/video/BV1d34y1A72o/
+
+
