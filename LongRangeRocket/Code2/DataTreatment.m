@@ -12,15 +12,15 @@ structState.y = state_storage(3,:);
 structState.theta = state_storage(4,:);
 
 for i = 1:length(Index)
-    [varvec,Others] = IntermediateVariable(state_storage(:,Index(i)),t_storage(Index(i)),Constant);
+    [varvec,others] = IntermediateVariable(state_storage(:,Index(i)),t_storage(Index(i)),Constant);
     structState.alpha(i) = varvec(2);
-    structState.P_e(i) = Others(1);
-    structState.P_ex(i) = Others(2);
-    structState.n_x1(i) = Others(3);
-    structState.n_y1(i) = Others(4);
-    structState.n_x2(i) = Others(5);
-    structState.n_y2(i) = Others(6);
-    structState.phi_pr(i) = Others(7);
+    structState.P_e(i) = others(1);
+    structState.P_ex(i) = others(2);
+    structState.n_x1(i) = others(3);
+    structState.n_y1(i) = others(4);
+    structState.n_x2(i) = others(5);
+    structState.n_y2(i) = others(6);
+    structState.phi_pr(i) = others(7);
 end
 end
 

@@ -4,8 +4,8 @@ format compact; format long;
 %% 预处理
 % 时间与步长
 t0 = 0;
-t_end = 150;
-step = 0.01;
+t_end = 150.0;
+step = 0.1;
 
 % 常数向量
 P_e = 200 * 1000;
@@ -38,7 +38,7 @@ while(1)
     end
 
     % 仿真终止判断
-    if t0 > t_end
+    if t1 > t_end + step/2
         break;
     else
         % 迭代赋值
