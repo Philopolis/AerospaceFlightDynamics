@@ -16,10 +16,18 @@ Please provide feedback if you find errors or bugs in the code.
 📫邮箱/Email：pauline.live@qq.com or pauline.live.cn@gmail.com(not ofen)
 
 
-# 2024.2.10更新
+# 2024.2.10 更新
 
 重构了远程火箭部分的代码  
 得到的数据更加真实，图像曲线更光滑  
+pdf、数据和数据图并未更新，报告中使用的图像依旧是第一版代码所绘  
+更新的代码位于code2文件夹下  
+在matlab R2023b环境下运行良好  
+
+# 2024.2.24 更新
+
+重构了战术导弹部分的代码  
+大大缩短了运行时间  
 pdf、数据和数据图并未更新，报告中使用的图像依旧是第一版代码所绘  
 更新的代码位于code2文件夹下  
 在matlab R2023b环境下运行良好  
